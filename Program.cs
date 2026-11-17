@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-// ==================== ОПРЕДЕЛЕНИЯ МЕТОДОВ ====================
-
 void AddWord(Dictionary<string, int> frequencies, string word)
 {
     if (frequencies.TryGetValue(word, out int count))
@@ -134,3 +132,6 @@ Console.WriteLine(test.Count);
 Console.WriteLine(test["код"]);
 Console.WriteLine(SumFrequencies(test));
 Console.WriteLine(test.ContainsKey("план"));
+
+
+Самостоятельное задание
