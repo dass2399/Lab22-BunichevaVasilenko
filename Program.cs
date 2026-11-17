@@ -119,19 +119,23 @@ else
 {
     Console.WriteLine("Слово не найдено");
 }
-Dictionary<string, int> test = new Dictionary<string, int>();
-
-Console.WriteLine(SumFrequencies(test));
-PrintFrequencies(test);
-
-AddWord(test, "код");
-AddWord(test, "код");
-AddWord(test, "тест");
-
-Console.WriteLine(test.Count);
-Console.WriteLine(test["код"]);
-Console.WriteLine(SumFrequencies(test));
-Console.WriteLine(test.ContainsKey("план"));
 
 
-Самостоятельное задание
+Console.WriteLine();
+Console.Write("Введите порог частоты (1..100): ");
+int limit = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine($"Слов с частотой >= {limit}: {CountFrequentWords(frequencies, limit)}");
+
+int CountFrequentWords(Dictionary<string, int> frequencies, int limit)
+{
+    int count = 0;
+    foreach (KeyValuePair<string, int> entry in frequencies)
+    {
+        if (entry.Value >= limit)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+//самостоятельное задание 1 вариант
